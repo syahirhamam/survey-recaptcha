@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Secure Survey</title>
+    <title>Secure Survey with reCAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+        iframe {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Please verify you're human to start the survey:</h2>
+<h2>👋 Please verify you're human to access the survey</h2>
 
-<!-- reCAPTCHA Widget -->
-<div class="g-recaptcha" data-sitekey="6LcKHSQrAAAAANOm0fbB7HXMok2TWzxZQ_AGvRmr" data-callback="captchaVerified"></div>
+<!-- reCAPTCHA box -->
+<div class="g-recaptcha" 
+     data-sitekey="LcKHSQrAAAAANOm0fbB7HXMok2TWzxZQ_AGvRmr" 
+     data-callback="captchaVerified">
+</div>
 
-<!-- Survey iframe (hidden initially) -->
-<div id="survey-container" style="display:none; margin-top:20px;">
-    <iframe src="https://dasar-nacsa.surveysparrow.com/s/public-commentary-v2/tt-he24U" width="100%" height="600px" frameborder="0"></iframe>
+<!-- Survey iframe (hidden at first) -->
+<div id="survey-container" style="display:none;">
+    <iframe src="https://dasar-nacsa.surveysparrow.com/s/public-commentary-v2/tt-he24U" width="90%" height="700px" frameborder="0"></iframe>
 </div>
 
 <script>
